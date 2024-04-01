@@ -100,7 +100,7 @@ dependencies {
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
-    implementation(project(":libcodec2-android"))
+//    implementation(project(":libcodec2-android"))
 
 
 }
