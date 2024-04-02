@@ -37,12 +37,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
 }
 
 dependencies {
@@ -103,4 +97,18 @@ dependencies {
 //    implementation(project(":libcodec2-android"))
 
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+
+                groupId = "com.commcrete.stardust"
+                artifactId = "stardust"
+                version = "0.0.0"
+            }
+        }
+    }
 }
